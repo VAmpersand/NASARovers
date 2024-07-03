@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>api</key>
+	<dict>
+		<key>scheme</key>
+		<string>https</string>
+		<key>domen</key>
+		<string>api.nasa.gov</string>
+		<key>subDomen</key>
+		<string>/mars-photos</string>
+		<key>version</key>
+		<string>/api/v1</string>
+	</dict>
+	<key>roverPageURL</key>
+	<dict>
+		<key>curiosity</key>
+		<string>https://mars.nasa.gov/msl/mission/overview</string>
+		<key>spirit</key>
+		<string>https://www.jpl.nasa.gov/missions/mars-exploration-rover-spirit-mer-spirit</string>
+		<key>opportunity</key>
+		<string>https://www.jpl.nasa.gov/missions/mars-exploration-rover-opportunity-mer</string>
+	</dict>
+	<key>apiKey</key>
+	<string>6ZhrcOOQ7D3HWkyybR1zyMjU4qxWRS97ov7IgXUv</string>
+</dict>
+</plist>
