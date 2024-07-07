@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		77100C4C2C3ADE4C00E6ADCE /* PhotosResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77100C4B2C3ADE4C00E6ADCE /* PhotosResponse.swift */; };
+		77100C4E2C3ADE7100E6ADCE /* ManifestResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77100C4D2C3ADE7100E6ADCE /* ManifestResponse.swift */; };
 		7724D2672C357E560079B31D /* NASARoversApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7724D2662C357E560079B31D /* NASARoversApp.swift */; };
 		7724D2692C357E560079B31D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7724D2682C357E560079B31D /* ContentView.swift */; };
 		7724D26B2C357E570079B31D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7724D26A2C357E570079B31D /* Assets.xcassets */; };
@@ -20,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		77100C4B2C3ADE4C00E6ADCE /* PhotosResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosResponse.swift; sourceTree = "<group>"; };
+		77100C4D2C3ADE7100E6ADCE /* ManifestResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManifestResponse.swift; sourceTree = "<group>"; };
 		7724D2632C357E560079B31D /* NASARovers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NASARovers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7724D2662C357E560079B31D /* NASARoversApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NASARoversApp.swift; sourceTree = "<group>"; };
 		7724D2682C357E560079B31D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -85,6 +89,8 @@
 			children = (
 				7724D2792C3581260079B31D /* Rover.swift */,
 				7724D2842C358A5A0079B31D /* APIError.swift */,
+				77100C4B2C3ADE4C00E6ADCE /* PhotosResponse.swift */,
+				77100C4D2C3ADE7100E6ADCE /* ManifestResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -198,7 +204,9 @@
 				7724D2772C357FBC0079B31D /* APIEndpointProvider.swift in Sources */,
 				7724D2832C358A190079B31D /* APIDataProvider.swift in Sources */,
 				7724D2672C357E560079B31D /* NASARoversApp.swift in Sources */,
+				77100C4C2C3ADE4C00E6ADCE /* PhotosResponse.swift in Sources */,
 				7724D2852C358A5A0079B31D /* APIError.swift in Sources */,
+				77100C4E2C3ADE7100E6ADCE /* ManifestResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

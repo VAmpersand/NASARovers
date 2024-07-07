@@ -9,9 +9,9 @@
 		<key>domen</key>
 		<string>api.nasa.gov</string>
 		<key>subDomen</key>
-		<string>/mars-photos</string>
+		<string>/mars-photos/api/</string>
 		<key>version</key>
-		<string>/api/v1</string>
+		<string>v1</string>
 	</dict>
 	<key>roverPageURL</key>
 	<dict>
