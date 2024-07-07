@@ -50,8 +50,8 @@ final class APIDataProvider {
                             }
 
                             let decoder = JSONDecoder()
+                            decoder.keyDecodingStrategy = .convertFromSnakeCase
                             print("Request URL", request.url!)
-
                             if (200...299) ~= statusCode {
                                 do {
                                     let object = try decoder.decode(T.self, from: data)

@@ -19,7 +19,11 @@ struct Manifest: Codable {
     let maxSol: Int
     let maxDate: String
     let totalPhotos: Int
-    let photos: [ManifestPhoto]
+    private let photos: [ManifestPhoto]
+
+    var sortedPhotos: [ManifestPhoto] {
+        photos.reversed()
+    }
 }
 
 extension Manifest {
@@ -31,4 +35,10 @@ struct ManifestPhoto: Codable {
     let earthDate: String
     let totalPhotos: Int
     let cameras: [String]
+
+    var pagesCount: Int {
+        var pages = totalPhotos / 25
+        pages += totalPhotos % 25 == 0 ? 0 : 1
+        return pages
+    }
 }
