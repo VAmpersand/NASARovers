@@ -8,13 +8,29 @@
 import SwiftUI
 
 struct ContentView: View {
-    let apiDataProvider = APIDataProvider()
+    private let photoProvider: PhotosProvider
 
-    init() {
-        apiDataProvider.getData(for: .manifests(rover: .curiosity)) { (data: Data) in
-            print(data.count)
-        } errorHandler: { error in
-            print(error.description)
+    init(for rover: Rover) {
+        self.photoProvider = PhotosProviderImpl(for: rover)
+
+        photoProvider.fetchPhoto { [self] dict in
+            print(dict.count, "\n\n")
+
+            self.photoProvider.fetchPhoto { [self] dict in
+                print(dict.count, "\n\n")
+
+                self.photoProvider.fetchPhoto { [self] dict in
+                    print(dict.count, "\n\n")
+
+                    self.photoProvider.fetchPhoto { [self] dict in
+                        print(dict.count, "\n\n")
+
+                        self.photoProvider.fetchPhoto { dict in
+                            print(dict.count, "\n\n")
+                        }
+                    }
+                }
+            }
         }
     }
 
@@ -30,5 +46,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    ContentView(for: .curiosity)
 }

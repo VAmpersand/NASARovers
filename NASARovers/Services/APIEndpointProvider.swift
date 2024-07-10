@@ -76,7 +76,7 @@ final class APIEndpointProvider {
         }
 
         url.append(queryItems: [
-            URLQueryItem(name: "apikey", value: apiKey)
+            URLQueryItem(name: "api_key", value: apiKey)
         ])
 
         return url
