@@ -24,10 +24,10 @@ struct Manifest: Codable {
     var sortedPhotos: [ManifestPhoto] {
         photos.reversed()
     }
-}
 
-extension Manifest {
-    var rover: Rover { Rover(rawValue: name.lowercased()) ?? .opportunity }
+    var rover: Rover {
+        Rover(rawValue: name.lowercased()) ?? .opportunity
+    }
 }
 
 struct ManifestPhoto: Codable {
@@ -37,8 +37,9 @@ struct ManifestPhoto: Codable {
     let cameras: [String]
 
     var pagesCount: Int {
-        var pages = totalPhotos / 25
-        pages += totalPhotos % 25 == 0 ? 0 : 1
+        let photoOnPageCount = 25
+        var pages = totalPhotos / photoOnPageCount
+        pages += totalPhotos % photoOnPageCount == 0 ? 0 : 1
         return pages
     }
 }
