@@ -1,5 +1,5 @@
 //
-//  ViewModel.swift
+//  RoverSelectionViewModel.swift
 //  NASARovers
 //
 //  Created by Viktor Prikolota on 10.07.2024.
@@ -8,11 +8,12 @@
 import Foundation
 import Combine
 
-final class ViewModel: ObservableObject {
+final class RoverSelectionViewModel: ObservableObject {
     private let photoProvider: PhotosProvider
     private let rover: Rover
 
     @Published var photoDict: [Int: String] = [:]
+    @Published var selectedRover = Rover.opportunity
     private var cancellables = Set<AnyCancellable>()
 
     init(for rover: Rover) {

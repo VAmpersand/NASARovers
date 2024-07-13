@@ -1,13 +1,22 @@
 {
-  "originHash" : "e8f130fe30ac6cdc940ef06ee1e8535e9f46ffee6aeead1722b9525562f6ce08",
+  "originHash" : "c7e00509ed45ddc40f0b1e2f01790404502cd229eeeef46b03f5ed596f1093de",
   "pins" : [
     {
-      "identity" : "alamofire",
+      "identity" : "pure-swift-ui",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Alamofire/Alamofire.git",
+      "location" : "https://github.com/CodeSlicing/pure-swift-ui.git",
       "state" : {
-        "revision" : "f455c2975872ccd2d9c81594c658af65716e9b9a",
-        "version" : "5.9.1"
+        "revision" : "bff1008f1e00eb2c3c7db9098c4c692dedc143b3",
+        "version" : "5.1.0"
+      }
+    },
+    {
+      "identity" : "pure-swift-ui-design",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/CodeSlicing/pure-swift-ui-design.git",
+      "state" : {
+        "revision" : "40489273ee4703032c7d4d185ac25743f604e158",
+        "version" : "1.0.0"
       }
     }
   ],
