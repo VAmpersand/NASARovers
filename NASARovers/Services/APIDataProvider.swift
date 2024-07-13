@@ -7,6 +7,7 @@
 
 import Foundation
 import Alamofire
+import Combine
 
 enum AppError: Error {
     case connectivityError
@@ -32,46 +33,38 @@ enum AppError: Error {
 final class APIDataProvider {
     private let endpointProvider = APIEndpointProvider()
 
-    func getData<T: Decodable>(for endpoint: Endpount,
-                               completionHandler: @escaping (T) -> Void,
-                               errorHandler: @escaping (AppError) -> Void) {
-        DispatchQueue.global(qos: .background).async { [self] in
-            let request = URLRequest(url: endpointProvider.getURL(for: endpoint))
+    func request<T: Decodable>(with endpoint: Endpount) -> AnyPublisher<T, AppError> {
+        print(endpointProvider.getURL(for: endpoint))
+        return URLSession.shared
+            .dataTaskPublisher(for: endpointProvider.getURL(for: endpoint))
+            .subscribe(on: DispatchQueue.global(qos: .background))
+            .receive(on: DispatchQueue.main)
+            .mapError { _ in .connectivityError }
+            .flatMap { data, response -> AnyPublisher<T, AppError> in
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
 
-            AF.request(endpointProvider.getURL(for: endpoint))
-                .response { response in
-                    DispatchQueue.main.async {
-                        switch response.result {
-                        case .success(let data):
-                            guard let data,
-                                  let statusCode = response.response?.statusCode else {
-                                errorHandler(.networkError)
-                                return
-                            }
+                if let response = response as? HTTPURLResponse {
+                    if (200...299).contains(response.statusCode) {
+                        return Just(data)
+                            .decode(type: T.self, decoder: decoder)
+                            .mapError {_ in .decodeJSONfailed}
+                            .eraseToAnyPublisher()
 
-                            let decoder = JSONDecoder()
-                            decoder.keyDecodingStrategy = .convertFromSnakeCase
-                            print("Request URL", request.url!)
-                            if (200...299) ~= statusCode {
-                                do {
-                                    let object = try decoder.decode(T.self, from: data)
-                                    completionHandler(object)
-                                } catch {
-                                    errorHandler(.decodeJSONfailed)
-                                }
-                            } else {
-                                do {
-                                    let errorResponse = try decoder.decode(APIErrorResponse.self, from: data)
-                                    errorHandler(.apiError(errorResponse.error))
-                                } catch {
-                                    errorHandler(.unknown)
-                                }
-                            }
-                        case .failure(let error):
-                            errorHandler(.other(error.localizedDescription))
+                    } else {
+                        do {
+                            let errorResponse = try decoder.decode(APIErrorResponse.self, from: data)
+                            return Fail(error: .apiError(errorResponse.error))
+                                .eraseToAnyPublisher()
+                        } catch {
+                            return Fail(error: .decodeJSONfailed)
+                                .eraseToAnyPublisher()
                         }
                     }
                 }
-        }
+                return Fail(error: .unknown)
+                    .eraseToAnyPublisher()
+            }
+            .eraseToAnyPublisher()
     }
 }

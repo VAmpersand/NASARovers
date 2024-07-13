@@ -21,6 +21,7 @@
 		7724D2852C358A5A0079B31D /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7724D2842C358A5A0079B31D /* APIError.swift */; };
 		7742D3A82C3AE7E200392588 /* PhotosProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7742D3A72C3AE7E200392588 /* PhotosProvider.swift */; };
 		7742D3AA2C3AE84E00392588 /* UDStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7742D3A92C3AE84E00392588 /* UDStorageManager.swift */; };
+		7742D3BE2C3EAC8300392588 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7742D3BD2C3EAC8300392588 /* ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		7724D2842C358A5A0079B31D /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		7742D3A72C3AE7E200392588 /* PhotosProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosProvider.swift; sourceTree = "<group>"; };
 		7742D3A92C3AE84E00392588 /* UDStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDStorageManager.swift; sourceTree = "<group>"; };
+		7742D3BD2C3EAC8300392588 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 				7724D2782C3581110079B31D /* Models */,
 				7724D27F2C3589B70079B31D /* Services */,
 				7724D2682C357E560079B31D /* ContentView.swift */,
+				7742D3BD2C3EAC8300392588 /* ViewModel.swift */,
 				7724D27E2C3589AC0079B31D /* SupportingFiles */,
 			);
 			path = NASARovers;
@@ -208,6 +211,7 @@
 				7724D27A2C3581260079B31D /* Rover.swift in Sources */,
 				7724D2692C357E560079B31D /* ContentView.swift in Sources */,
 				7742D3AA2C3AE84E00392588 /* UDStorageManager.swift in Sources */,
+				7742D3BE2C3EAC8300392588 /* ViewModel.swift in Sources */,
 				7724D2772C357FBC0079B31D /* APIEndpointProvider.swift in Sources */,
 				7724D2832C358A190079B31D /* APIDataProvider.swift in Sources */,
 				7724D2672C357E560079B31D /* NASARoversApp.swift in Sources */,

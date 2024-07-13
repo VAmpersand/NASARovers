@@ -11,7 +11,7 @@ import SwiftUI
 struct NASARoversApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView(for: .curiosity)
+            ContentView(viewModel: ViewModel(for: .curiosity))
         }
     }
 }
